@@ -133,14 +133,14 @@ Output: a shuffled list of 24 partner codes.
 **1. Clone the repository**
 
 ```bash
-git clone <repository-url>
-cd <repository-folder>
+git clone https://github.com/emon51/property-allocator-algorithm.git
+cd property-allocator-algorithm
 ```
 
 **2. Create and activate a virtual environment**
 
 ```bash
-python -m venv venv
+python3 -m venv venv
 source venv/bin/activate
 ```
 
