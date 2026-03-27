@@ -65,8 +65,9 @@ class PropertyAllocator:
 
     def _redistribute_remaining_properties(self, remaining_count: int) -> None:
         total_available: int = sum(self.db_count.values())
+        current_total: int = sum(self.property_count_map.values())
 
-        while remaining_count and sum(self.property_count_map.values()) < total_available:
+        while remaining_count and  current_total < total_available:
             added_property: bool = False
 
             for partner in self.priority_list:
@@ -74,6 +75,7 @@ class PropertyAllocator:
                     continue
 
                 self.property_count_map[partner] += 1
+                current_total += 1
                 remaining_count -= 1
                 added_property = True
 
